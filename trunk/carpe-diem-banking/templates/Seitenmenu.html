@@ -1,0 +1,23 @@
+<div class=Klienten>
+
+<a {% if Klientenkasse %}class=selected{% endif %} href="/Kontenverwaltung/Klientenkasse">Klientenkasse</a><br/>
+
+<br/>
+<hr/>
+<br/>
+
+{% for Klient in Klienten %}
+<a {% if Klient.selected %}class="selected"{% endif %} href="/Kontenverwaltung/Klient?Klient={{ Klient.id }}">{{ Klient.vorname }} {{ Klient.nachname }}</a>
+<br/><br/>
+{% endfor %}
+
+<hr/>
+<br/>
+
+{% for Klient in WeitereKlienten %}
+<a {% if Klient.selected %}class="selected"{% endif %} href="/Kontenverwaltung/Klient?Klient={{ Klient.id }}">{{ Klient.vorname }} {{ Klient.nachname }}</a>
+<br/><br/>
+{% endfor %}
+
+</div>
+

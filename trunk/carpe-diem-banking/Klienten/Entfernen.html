@@ -1,0 +1,24 @@
+{% extends "main.html" %}
+
+{% block content %}
+
+<form method="POST" action="/Kontenverwaltung/Betreute/Entfernen">
+
+<h1>M&ouml;chten sie</h1>
+
+<font color=red>
+<h1><i>{{ Betreuter }}</i></h1>
+<input type=hidden name=ID value="{{ ID }}" />
+</font>
+
+<h1>wirklich unwideruflich l&ouml;schen ?</h1>
+
+<br/><br/>
+
+<input type=submit value="Ja, unwiderruflich l&ouml;schen" style="width:200px;" />
+
+<input type=button value="Nein, zur&uuml;ck zur &Uuml;bersicht" onclick="javascript:window.location.href='Liste';" style="width:200px;" />
+
+</form>
+
+{% endblock %}
