@@ -1,10 +1,8 @@
-# Django settings for Kontenverwaltung project.
-
 DEBUG = True
 TEMPLATE_DEBUG = True 
 
-PROJECT_OPTION_ROOT = "/var/www/Kontenverwaltung/"
-PROJECT_OPTION_HEAD_URL = "Kontenverwaltung/"
+PROJECT_OPTION_ROOT = "/var/www/Django/carpediembanking/"
+PROJECT_OPTION_HEAD_URL = "carpediembanking/"
 
 ADMINS = (
     ('Matthias Bock', 'matthias.bock@hu-berlin.de'),
@@ -12,55 +10,21 @@ ADMINS = (
 
 MANAGERS = ADMINS
 
-DATABASE_ENGINE = 'mysql'           # 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'ado_mssql'.
-DATABASE_NAME = 'Django'             # Or path to database file if using sqlite3.
-DATABASE_USER = 'kafka'             # Not used with sqlite3.
-DATABASE_PASSWORD = 'kafkaesk'         # Not used with sqlite3.
-DATABASE_HOST = ''             # Set to empty string for localhost. Not used with sqlite3.
-DATABASE_PORT = ''             # Set to empty string for default. Not used with sqlite3.
+DATABASE_ENGINE = 'mysql'
+DATABASE_NAME = 'Django'
+DATABASE_USER = 'kafka'
+DATABASE_PASSWORD = ''
+DATABASE_HOST = 'localhost'
+DATABASE_PORT = ''
 
-# Local time zone for this installation. Choices can be found here:
-# http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
-# although not all choices may be available on all operating systems.
-# If running in a Windows environment this must be set to the same as your
-# system time zone.
-TIME_ZONE = 'Germany/Berlin'
-
-# Language code for this installation. All choices can be found here:
-# http://www.i18nguy.com/unicode/language-identifiers.html
 LANGUAGE_CODE = 'de'
+TIME_ZONE = 'Germany/Berlin'
+USE_I18N = False
 
-CACHE_MIDDLEWARE_SECONDS = 1
+MEDIA_URL = '/carpediembanking/static/'
+MEDIA_ROOT = '/var/www/Django/carpediembanking/static/'
 
-SITE_ID = 1
-
-# If you set this to False, Django will make some optimizations so as not
-# to load the internationalization machinery.
-USE_I18N = True
-
-# Absolute path to the directory that holds media.
-# Example: "/home/media/media.lawrence.com/"
-MEDIA_ROOT = '/var/www/carpe-diem-banking/static/'
-
-# URL that handles the media served from MEDIA_ROOT. Make sure to use a
-# trailing slash if there is a path component (optional in other cases).
-# Examples: "http://media.lawrence.com", "http://example.com/media/"
-MEDIA_URL = '/media/'
-
-# URL prefix for admin media -- CSS, JavaScript and images. Make sure to use a
-# trailing slash.
-# Examples: "http://foo.com/media/", "/media/".
-ADMIN_MEDIA_PREFIX = '/admin_media/'
-
-# Make this unique, and don't share it with anybody.
-SECRET_KEY = 'y781t1qn(wx^ra-87sidcusf+493q(d9ip1t#i6cajrxi!jv2z'
-
-# List of callables that know how to import templates from various sources.
-TEMPLATE_LOADERS = (
-    'django.template.loaders.filesystem.load_template_source',
-    'django.template.loaders.app_directories.load_template_source',
-#     'django.template.loaders.eggs.load_template_source',
-)
+SECRET_KEY = ''
 
 MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
@@ -68,16 +32,16 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
 )
 
-ROOT_URLCONF = 'Kontenverwaltung.urls'
-
-TEMPLATE_DIRS = (
-    '/var/www/Kontenverwaltung/main',
-    '/var/www/Kontenverwaltung/main/templates',
-    '/var/www/Kontenverwaltung/main/Intranet',
-    '/var/www/Kontenverwaltung/main/Girokonto',
+TEMPLATE_LOADERS = (
+    'django.template.loaders.filesystem.load_template_source',
+    'django.template.loaders.app_directories.load_template_source',
 )
 
-LOGIN_URL = '/Kontenverwaltung/Login'
+TEMPLATE_DIRS = (
+    '/var/www/Django/carpediembanking/templates',
+)
+
+ROOT_URLCONF = 'carpediembanking.urls'
 
 INSTALLED_APPS = (
     'django.contrib.auth',
@@ -85,5 +49,8 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.sites',
     'django.contrib.admin',
-    'Kontenverwaltung.main',
+    'carpediembanking.main',
 )
+
+LOGIN_URL = '/carpediembanking/Login'
+
