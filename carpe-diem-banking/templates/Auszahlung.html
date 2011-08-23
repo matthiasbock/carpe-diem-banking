@@ -1,0 +1,37 @@
+{% extends "Intranet.html" %}
+
+{% block Umsatzframe %}
+
+<h1>{{ Klientenname }}</h1>
+
+<h2>Auszahlung</h2>
+
+<br/>
+
+<form method="POST" action="/Kontenverwaltung/Auszahlung">
+<div class=Funktionen>
+<input type=hidden name=Klient value={{ KlientenID }} />
+<table border=0 cellspacing=0 cellpadding=10 bgcolor="#dee7ec">
+	<tr>
+		<td>Betrag:</td>
+		<td align=right><input type=text name=Betrag value="0,00" style="width:100px;text-align:right;"> &euro;</td>
+	</tr>
+</table>
+<br/>
+<table border=0 cellspacing=0 cellpadding=10 bgcolor="#dee7ec">
+	<tr>
+		<td>
+			<a href="Klient?Klient={{ KlientenID }}">Zur&uuml;ck</a>
+			<a href="javascript:document.forms[0].submit();">Speichern</a>
+		</td>
+	</tr>
+</table>
+</div>
+</form>
+
+<script language='JavaScript' type='text/javascript'>
+	document.forms[0].Betrag.select();
+	document.forms[0].Betrag.focus();
+</script>
+
+{% endblock %}
