@@ -1,2 +1,3 @@
  * [Startseite Info]
  * [Funktionsumfang]
+ * [Splitten Geldeingänge splitten]
