@@ -5,17 +5,27 @@ PROJECT_OPTION_ROOT = "/var/www/Django/carpediembanking/"
 PROJECT_OPTION_HEAD_URL = "carpediembanking/"
 
 ADMINS = (
-    ('Matthias Bock', 'matthias.bock@hu-berlin.de'),
+    ('webmaster', 'webmaster@localhost'),
 )
 
 MANAGERS = ADMINS
 
-DATABASE_ENGINE = 'mysql'
-DATABASE_NAME = 'Django'
-DATABASE_USER = 'kafka'
-DATABASE_PASSWORD = ''
-DATABASE_HOST = 'localhost'
-DATABASE_PORT = ''
+from Django.databases import CarpeDiemDB
+
+DATABASES = {
+	    'carpediembanking': {
+		'ENGINE': 'mysql',
+		'NAME': 'carpediembanking',
+		'USER':	'Django',
+		'PASSWORD': '',
+		'HOST': 'localhost',
+		'PORT': '',
+	    }
+	}
+
+TEMPLATE_DIRS = (
+	'/var/www/Django/carpediembanking/templates',
+)
 
 LANGUAGE_CODE = 'de'
 TIME_ZONE = 'Germany/Berlin'
@@ -35,10 +45,6 @@ MIDDLEWARE_CLASSES = (
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.load_template_source',
     'django.template.loaders.app_directories.load_template_source',
-)
-
-TEMPLATE_DIRS = (
-    '/var/www/Django/carpediembanking/templates',
 )
 
 ROOT_URLCONF = 'carpediembanking.urls'
