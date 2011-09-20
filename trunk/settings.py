@@ -13,14 +13,14 @@ MANAGERS = ADMINS
 from Django.databases import CarpeDiemDB
 
 DATABASES = {
-	    'carpediembanking': {
-		'ENGINE': 'mysql',
+	'default': {
+		'ENGINE': 'django.db.backends.mysql',
 		'NAME': 'carpediembanking',
 		'USER':	'Django',
 		'PASSWORD': '',
 		'HOST': 'localhost',
 		'PORT': '',
-	    }
+		}
 	}
 
 TEMPLATE_DIRS = (
