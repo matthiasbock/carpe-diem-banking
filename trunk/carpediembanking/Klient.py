@@ -1,7 +1,7 @@
 # -*- coding: iso-8859-15 -*-
 
-from Kontenverwaltung.main.models import *
-from Kontenverwaltung.main.includes import *
+from Django.carpediembanking.models import *
+from Django.carpediembanking.includes import *
 
 from django.shortcuts import render_to_response
 from django.http import HttpResponse, HttpResponseRedirect
@@ -22,7 +22,7 @@ def Klient( request ):			# Umsätze des Klienten anzeigen
 		Klient = None
 	if Klient == None:
 		return HttpResponseRedirect("Intranet")
-	Klient = Klienten.objects.get( id=Klient )
+	Klient = Klienten.objects.using(DB).get( id=Klient )
 	params["Startdatum"] = Klient.startdatum
 	if Klient.startsaldo != None:
 		params["Startsaldo"] = currency( Klient.startsaldo )
@@ -33,25 +33,25 @@ def Klient( request ):			# Umsätze des Klienten anzeigen
 	params["Ergebnisse"] = []
 	
 	# Zuteilungen
-	for E in Zuteilungen.objects.filter( anklient = Klient.id ):
-		B = Betreuer.objects.get( id=E.betreuer )
+	for E in Zuteilungen.objects.using(DB).filter( anklient = Klient.id ):
+		B = Betreuer.objects.using(DB).get( id=E.betreuer )
 		params["Ergebnisse"].append( {"typ":"Zuteilung", "id":E.id, "datum":E.datum, "vorgang":"Zuteilung, "+B.vorname+" "+B.nachname, "betrag":currency( E.teilbetrag ) } )
 		params["Anzahl"] += 1
 		params["Saldo"] += E.betrag
 	
 	# Einzahlungen
-#	for Einzahlung in Klienteneinzahlungen.objects.filter( klient = Klient.id ):
+#	for Einzahlung in Klienteneinzahlungen.objects.using(DB).filter( klient = Klient.id ):
 	
 	# Auszahlungen
-	for E in Klientenauszahlungen.objects.filter( anklient = Klient.id ):
-		B = Betreuer.objects.get( id=E.betreuer )
-		K = Klientenkassen.objects.get( id=E.ausklientenkasse )
+	for E in Klientenauszahlungen.objects.using(DB).filter( anklient = Klient.id ):
+		B = Betreuer.objects.using(DB).get( id=E.betreuer )
+		K = Klientenkassen.objects.using(DB).get( id=E.ausklientenkasse )
 		params["Ergebnisse"].append( {"typ":"Auszahlung", "id":E.id, "datum":E.datum, "vorgang":"Barauszahlung, "+B.vorname+" "+B.nachname+"<br/><i>"+K.name+"</i>", "betrag":currency( -E.betrag ) } )
 		params["Anzahl"] += 1
 		params["Saldo"] -= E.betrag
 	
 	# Überweisungen
-	_Ueberweisungen = Klientenueberweisungen.objects.filter( fuerklient = Klient.id )
+	_Ueberweisungen = Klientenueberweisungen.objects.using(DB).filter( fuerklient = Klient.id )
 	
 	# nach Datum ordnen
 	get = itemgetter('datum')
@@ -61,7 +61,7 @@ def Klient( request ):			# Umsätze des Klienten anzeigen
 		params["Saldo"] = currency( params["Saldo"] )
 	
 	params["Forderungsanzahl"] = 0
-	params["Forderungen"] = Schulden.objects.filter( klient = Klient.id )
+	params["Forderungen"] = Schulden.objects.using(DB).filter( klient = Klient.id )
 	params["Restschuld"] = currency( 0 )
 	return render_to_response("Klient.html", params)
 
@@ -92,7 +92,7 @@ def Auszahlung( request ):
 		if Klient == None or Klient == 0:
 			setsession( request, "Fehler", "Klienten-ID wurde nicht an den Auszahlungsprozess übergeben ! Bitte Administrator kontaktieren." )
 			return HttpResponseRedirect("Intranet")
-		B = Betreuer.objects.get( auth_user_id=request.user.id )
+		B = Betreuer.objects.using(DB).get( auth_user_id=request.user.id )
 		try:
 			Betrag = request.POST.get("Betrag").replace(",",".")
 			if float(Betrag) <= 0:	# ist es ein gültiger Betrag ?
@@ -101,7 +101,7 @@ def Auszahlung( request ):
 			setsession( request, "Fehler", "Das ist kein gültiger Betrag ! Auszahlung nicht gespeichert." )
 			return HttpResponseRedirect("Klient?Klient="+str(Klient))
 						# Auszahlung speichern !
-		Klientenauszahlungen.objects.create( datum=datetime.date.today(), betreuer=B.id, betrag=Betrag, ausklientenkasse=B.klientenkasse, anklient=Klient )
+		Klientenauszahlungen.objects.using(DB).create( datum=datetime.date.today(), betreuer=B.id, betrag=Betrag, ausklientenkasse=B.klientenkasse, anklient=Klient )
 		setsession( request, "Nachricht", "Auszahlung wurde gespeichert." )
 		return HttpResponseRedirect("Klient?Klient="+str(Klient))
 
@@ -127,7 +127,7 @@ def Entfernen( request ):
 		return HttpResponseRedirect( returnto )
 	if Typ == "Auszahlung":
 		try:
-			Klientenauszahlungen.objects.get( id=ID ).delete()
+			Klientenauszahlungen.objects.using(DB).get( id=ID ).delete()
 			setsession( request, "Nachricht", "Auszahlung wurde gelöscht." )
 		except:
 			setsession( request, "Fehler", "Auszahlung konnte nicht gelöscht werden!" )

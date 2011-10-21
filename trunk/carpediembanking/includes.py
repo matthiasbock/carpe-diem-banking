@@ -1,9 +1,11 @@
 # -*- coding: iso-8859-15 -*-
 
-from Kontenverwaltung.main.models import *
+from Django.carpediembanking.models import *
 
 import datetime
 from operator import itemgetter
+
+DB = 'carpediembanking'
 
 def setsession(request, key, value):
 	if request.session.get(key, False):
@@ -32,7 +34,7 @@ def defaults( request ):
 	params["WeitereKlienten"] = []
 	if request.user.id != None:
 
-		Ich = Betreuer.objects.get( auth_user_id=request.user.id )			# Das bin ich
+		Ich = Betreuer.objects.using(DB).get( auth_user_id=request.user.id )			# Das bin ich
 		params["Anrede"] = Ich.vorname+" "+Ich.nachname
 		params["Saldo"] = currency( Saldo(request) )
 
@@ -47,19 +49,19 @@ def defaults( request ):
 			except:
 				Klient = None
 		if Klient != None:
-			K = Klienten.objects.get( id=Klient )
+			K = Klienten.objects.using(DB).get( id=Klient )
 			params["Klientenname"] = K.vorname+" "+K.nachname
 			params["KlientenID"] = K.id
 
-		for K in Klienten.objects.filter( betreuer=Ich.id ):				# das sind meine Klienten
+		for K in Klienten.objects.using(DB).filter( betreuer=Ich.id ):				# das sind meine Klienten
 			selected = Klient != None and Klient == K.id
 			params["Klienten"].append( {"selected":selected, "id":K.id, "vorname":K.vorname, "nachname":K.nachname} )
 		get = itemgetter('nachname')
 		params["Klienten"].sort(key = get)
 
-		for Kollege in Betreuer.objects.filter( klientenkasse=Ich.klientenkasse ):	# das sind die Klienten meiner Kollegen
+		for Kollege in Betreuer.objects.using(DB).filter( klientenkasse=Ich.klientenkasse ):	# das sind die Klienten meiner Kollegen
 			if Kollege.id != Ich.id:
-				for K in Klienten.objects.filter( betreuer=Kollege.id ):
+				for K in Klienten.objects.using(DB).filter( betreuer=Kollege.id ):
 					selected = Klient != None and Klient == K.id
 					params["WeitereKlienten"].append( {"selected":selected, "id":K.id, "vorname":K.vorname, "nachname":K.nachname} )
 		get = itemgetter('nachname')
