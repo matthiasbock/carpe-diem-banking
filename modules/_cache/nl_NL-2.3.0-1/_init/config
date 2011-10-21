@@ -1,0 +1,15 @@
+Package: nl_NL
+Version: 2.3.0-1
+Description: Dutch (Netherlands) translation Version merged from FA 2.2
+Author: Mark Van Mierlo / Ted Janzen <mark@nadorst.be / info@teds-it.com>
+Maintenance: Mark Van Mierlo / Ted Janzen <mark@nadorst.be / info@teds-it.com>
+Homepage: frontaccounting.net
+Language: nl_NL
+Encoding: iso-8859-1
+RTLDir: no
+Depends: 
+Type: language
+Name: Dutch (Netherlands)
+InstallPath: lang/nl_NL
+Filename: nl_NL-2.3.0-1
+
