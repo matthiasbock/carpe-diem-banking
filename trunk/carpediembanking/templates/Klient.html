@@ -32,7 +32,7 @@ tr.Umsatz:hover {
 		<td align=center>{{ Heute|date:"j. F Y" }}</td>
 		<td align=center>Aktuelles Saldo</td>
 		<td align=right>{% autoescape off %}{{ Saldo }}{% endautoescape %}</td>
-		<td><img src="/media/transparent.png" border=0 width=28 /></td>
+		<td><img src="/Django/carpediembanking/static/transparent.png" border=0 width=28 /></td>
 	</tr>
 	<tr>
 		<td colspan=4><hr/></td>
@@ -44,7 +44,7 @@ tr.Umsatz:hover {
 		<td align=right>{% autoescape off %}{{ Ergebnis.betrag }}{% endautoescape %}</td>
 		<td align=center>
 			<a href="Entfernen?Typ={{ Ergebnis.typ }}&ID={{ Ergebnis.id }}&returnto=Klient%3FKlient%3D{{ KlientenID }}" onClick="return confirm('Diese {{ Ergebnis.typ }} wirklich löschen ?')">
-			<img src="/media/cancelpassive.png" border=0 width=28 id="{{ Ergebnis.typ }}{{ Ergebnis.id }}" onMouseOver="javascript:raise('{{ Ergebnis.typ }}{{ Ergebnis.id }}');" onMouseOut="javascript:lower('{{ Ergebnis.typ }}{{ Ergebnis.id }}');" />
+			<img src="/Django/carpediembanking/static/cancelpassive.png" border=0 width=28 id="{{ Ergebnis.typ }}{{ Ergebnis.id }}" onMouseOver="javascript:raise('{{ Ergebnis.typ }}{{ Ergebnis.id }}');" onMouseOut="javascript:lower('{{ Ergebnis.typ }}{{ Ergebnis.id }}');" />
 			</a>
 		</td>
 	</tr>

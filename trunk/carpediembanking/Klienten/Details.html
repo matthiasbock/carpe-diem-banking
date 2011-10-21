@@ -7,7 +7,7 @@
 		<table class='tablestyle_inner' cellspacing=1 cellpadding=12>
 			<tr>
 				<td colspan=11 class=tableheader>
-				<img border=0 src="/media/Sozialarbeiter.png" height=48 style="vertical-align:center"/>
+				<img border=0 src="/Django/carpediembanking/static/Sozialarbeiter.png" height=48 style="vertical-align:center"/>
 				<h2>{{ vorname }} {{ nachname }}</h2>
 				<small>* {{ geburtstag|date:"j. F Y" }}</small>
 				{% if Sekretariat %}<h3>Betreuer: <i>{{ sozialarbeiter }}</i></h3>{% endif %}
@@ -30,7 +30,7 @@
 				<td align=center>{{ V.vorgang }}</td>
 				<td><pre>{{ V.details }}</pre></td>
 				<td align=right>{% autoescape off %}{{ V.betrag }}{% endautoescape %}</td>
-				<td>{% if not Sekretariat %}<a href="{{ V.link }}">{% endif %}<img border=0 src="/media/cancel.png" height=32 /></a></td>
+				<td>{% if not Sekretariat %}<a href="{{ V.link }}">{% endif %}<img border=0 src="/Django/carpediembanking/static/cancel.png" height=32 /></a></td>
 			</tr>
 {% endfor %}
 			<tr>
