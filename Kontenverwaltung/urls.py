@@ -26,7 +26,7 @@ urlpatterns = patterns('',
 
     (r'^Kontenverwaltung/Start$',			'Kontenverwaltung.main.start.start'),
     (r'^Kontenverwaltung/Betreute/Neu$',		'Kontenverwaltung.main.betreute.neu'),
-#    (r'^Kontenverwaltung/Betreute/Editieren$',		'Kontenverwaltung.main.betreute.editieren'),
+    (r'^Kontenverwaltung/Betreute/Details$',		'Kontenverwaltung.main.betreute.details'),
     (r'^Kontenverwaltung/Betreute/Liste$',		'Kontenverwaltung.main.betreute.liste'),
     (r'^Kontenverwaltung/Betreute/Entfernen$',		'Kontenverwaltung.main.betreute.entfernen'),
     (r'^Kontenverwaltung/Buchungen/Letzte$',		'Kontenverwaltung.main.buchungen.letzte'),
