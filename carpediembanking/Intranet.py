@@ -1,7 +1,7 @@
 # -*- coding: iso-8859-15 -*-
 
-from Kontenverwaltung.main.models import *
-from Kontenverwaltung.main.includes import *
+from Django.carpediembanking.models import *
+from Django.carpediembanking.includes import *
 
 from django.shortcuts import render_to_response
 from django.http import HttpResponse, HttpResponseRedirect
@@ -11,13 +11,13 @@ from django.contrib.auth.decorators import login_required
 @cache_control( max_age=1, must_revalidate=True, no_cache=True )
 #@login_required
 def Index( request ):
-	return HttpResponseRedirect("/Kontenverwaltung/Klientenkasse")
+	return HttpResponseRedirect("/Django/carpediembanking/Klientenkasse")
 
 def Klientenkasse( request ):
 	params = defaults( request )
 	params["Klientenkasse"] = True
 	try:
-		Kasse = Klientenkassen.objects.get( id=Betreuer.objects.get( auth_user_id=request.user.id ).klientenkasse )
+		Kasse = Klientenkassen.objects.using(DB).get( id=Betreuer.objects.using(DB).get( auth_user_id=request.user.id ).klientenkasse )
 	except:
 		return HttpResponseRedirect("Girokonto")
 	params["AktuellesSaldo"] = currency( Kasse.startsaldo )

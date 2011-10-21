@@ -55,7 +55,6 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.sites',
     'django.contrib.admin',
-    'carpediembanking.main',
 )
 
 LOGIN_URL = '/carpediembanking/Login'
