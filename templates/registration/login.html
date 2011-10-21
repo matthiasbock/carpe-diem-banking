@@ -1,0 +1,60 @@
+<html>
+
+{% include "head.html" %}
+
+<body id="loginscreen">
+{% include "header.html" %}
+
+<form method='POST' action='/Kontenverwaltung/login/'>
+<center>
+<table class='login' cellpadding=2 cellspacing=0>
+	<tr>
+		<td align='center' colspan=2>
+			<img src='/media/logo_accounting.png' alt="Carpe Diem e.V." border='0' />
+		</td>
+	</tr>
+{% if fehlgeschlagen %}
+	<tr>
+		<td colspan=2 class='tableheader'>
+			<font color=red><b>Falscher Benutzername oder falsches Passwort !</b></font>
+		</td>
+	</tr>
+{% else %}
+	<tr>
+		<td colspan=2 class='tableheader'>Bitte melden Sie sich an</td>
+	</tr>
+{% endif %}	
+	<tr>
+		<td class=label>&nbsp;&nbsp;Benutzername:</td>
+		<td align=center>
+			<select name="username" id="id_username" style="width:200px;">
+{% for B in Benutzer %}
+				<option value="{{ B.username }}">{{ B.first_name }} {{ B.last_name }}</option>
+{% endfor %}
+			</select>
+		</td>
+	</tr>
+	<tr>
+		<td class='label'>&nbsp;&nbsp;Passwort:</td>
+		<td align=center><input type="password" name="password" id="id_password" style="width:200px;" /></td>
+	</tr>
+
+	<tr>
+		<td colspan=2 align=center>
+			<input class="submitButton" type='submit' value='&nbsp;&nbsp;Anmelden&nbsp;&nbsp;' name='SubmitUser' />
+		</td>
+	</tr>
+</table>
+</form>
+
+<script language='JavaScript' type='text/javascript'>
+    document.forms[0].password.select();
+    document.forms[0].password.focus();
+</script>
+
+<br/><br/>
+
+{% include "footer.html" %}
+</body>
+
+</html>
