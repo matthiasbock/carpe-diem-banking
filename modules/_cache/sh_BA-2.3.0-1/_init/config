@@ -1,0 +1,15 @@
+Package: sh_BA
+Version: 2.3.0-1
+Description: Bosnian translation Version merged from FA 2.2
+Author: Nermin Sirbic <lang_sh@frontaccounting.com>
+Maintenance: Nermin Sirbic <lang_sh@frontaccounting.com>
+Homepage: frontaccounting.net
+Language: sh_BA
+Encoding: iso-8859-2
+RTLDir: no
+Depends: 
+Type: language
+Name: Bosnian
+InstallPath: lang/sh_BA
+Filename: sh_BA-2.3.0-1
+
