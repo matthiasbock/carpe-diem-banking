@@ -10,16 +10,14 @@ ADMINS = (
 
 MANAGERS = ADMINS
 
-from Django.databases import CarpeDiemDB
-
 DATABASES = {
 	'default': {
-		'ENGINE': 'django.db.backends.mysql',
-		'NAME': 'carpediembanking',
-		'USER':	'Django',
-		'PASSWORD': '',
-		'HOST': 'localhost',
-		'PORT': '',
+		'ENGINE':	'django.db.backends.mysql',
+		'NAME':		'carpediembanking',
+		'USER':		'Django',
+		'PASSWORD':	'',
+		'HOST':		'',
+		'PORT':		'',
 		}
 	}
 
@@ -28,7 +26,7 @@ TEMPLATE_DIRS = (
 )
 
 LANGUAGE_CODE = 'de'
-TIME_ZONE = 'Germany/Berlin'
+TIME_ZONE = 'Europe/Berlin'
 USE_I18N = False
 
 MEDIA_URL = '/carpediembanking/static/'
@@ -55,6 +53,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.sites',
     'django.contrib.admin',
+	'carpediembanking',
 )
 
 LOGIN_URL = '/carpediembanking/Login'
