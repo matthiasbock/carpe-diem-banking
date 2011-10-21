@@ -1,0 +1,58 @@
+{% extends "main.html" %}
+
+{% block content %}
+
+<table class='tablestyle2' cellpadding=2 cellspacing=0>
+	<tr valign=top><td>
+		<table class='tablestyle_inner' cellspacing=10 cellpadding=12>
+			<tr>
+				<td colspan=11 class=tableheader>
+				<h2>Forderungen</h2>
+				</td>
+			</tr>
+			<tr>
+				<th class=tableheader>Erhebungsdatum</th>
+				<th class=tableheader>Schuldner</th>
+				<th class=tableheader>Kreditor</th>
+				<th class=tableheader>Details</th>
+				<th class=tableheader>Gesamtforderung</th>
+				<th class=tableheader>Noch offen</th>
+				<th class=tableheader>&nbsp;</th>
+			</tr>
+{% for F in Forderungen %}
+			<tr class=evenrow>
+				<td align=center>{{ F.erhebungsdatum|date:"j. F Y" }}</td>
+				<td><a href="/Kontenverwaltung/Betreute/Details?ID={{ F.schuldner }}">{{ F.schuldnerName }}</a></td>
+				<td><pre>{{ F.kreditor }}</pre></td>
+				<td><pre>{{ F.details }}</pre></td>
+				<td align=right>{% autoescape off %}{{ F.gesamtforderung }}{% endautoescape %}</td>
+				<td align=right>{% autoescape off %}{{ F.offeneforderung }}{% endautoescape %}</td>
+				<td><a href="/Kontenverwaltung/Forderungen/Entfernen?ID={{ F.id }}"><img border=0 src="/media/cancel.png" height=32 /></a></td>
+			</tr>
+	{% for T in F.tilgungen %}
+			<tr class=oddrow>
+				<td></td>
+				<td align=center><img border=0 src="/media/Pfeil.png" height=32 /></td>
+				<td></td>
+				<td align=center>{{ T.datum|date:"j. F Y" }}</td>
+				<td align=right><font color=green><b>+ {{ T.betrag }}</b></font></td>
+				<td></td>
+				<td><a href="/Kontenverwaltung/Tilgungen/Entfernen?ID={{ T.id }}"><img border=0 src="/media/cancel.png" height=32 /></a></td>
+			</tr>
+	{% endfor %}
+			<tr class=oddrow>
+				<td></td>
+				<td align=center><a href="/Kontenverwaltung/Tilgungen/Neu?Forderung={{ F.id }}"><img border=0 src="/media/Pfeil.png" height=32 /></a></td>
+				<td colspan=5></td>
+			</tr>
+{% endfor %}
+			<tr>
+				<td colspan=7>
+				<i>Zur Zeit: {{ Anzahl }} Forderungen.</i>
+				</td>
+			</tr>
+		</table>
+	</td></tr>
+</table>
+
+{% endblock %}

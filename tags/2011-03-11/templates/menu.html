@@ -1,0 +1,37 @@
+
+<table width='100%' cellspacing=10>
+	<tr>	<td width='130'>&nbsp;</td>
+		<td width='130'>&nbsp;</td>
+		<td width='*' align=center>
+<center>
+<h1>Willkommen, {{ Anrede }} !</h1>
+<h3>Ihr Kontostand betr&auml;gt {% autoescape off %}{{ Kontostand }}{% endautoescape %}</h3>
+</center>
+</td>
+		<td width='130'>
+			<a href='javascript:window.print()'>
+			<img src='/media/print.png' width='32' border='0' alt='Drucken'><br/>
+			<p style='float:left;'>Seite ausdrucken</p>
+			</a>
+		</td>
+		<td width='130'>
+			<a href="/Kontenverwaltung/logout/">
+			<img src='/media/logout.png' height='32' border='0' alt='Abmelden'><br/>
+			<p style='float:left;'>Abmelden</p>
+			</a>
+		</td>
+
+	</tr>
+</table>
+
+<br/>
+
+<center>
+<div class="tabs">
+<a {% if MenuStart %}class="selected"{% endif %} href="/Kontenverwaltung/Start">Start</a>
+<a {% if MenuBetreute %}class="selected"{% endif %} href="/Kontenverwaltung/Betreute/Liste">Meine Betreuten</a>
+<a {% if MenuGeldeingaenge %}class="selected"{% endif %} href="/Kontenverwaltung/Geldeingaenge/Liste">Meine Geldeing&auml;nge</a>
+<a {% if MenuAuszahlungen %}class="selected"{% endif %} href="/Kontenverwaltung/Auszahlungen/Liste">Auszahlungen</a>
+<a {% if MenuForderungen %}class="selected"{% endif %} href="/Kontenverwaltung/Forderungen/Liste">Forderungen</a>
+</div>
+</center>

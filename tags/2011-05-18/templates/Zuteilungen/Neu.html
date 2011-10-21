@@ -1,0 +1,49 @@
+{% extends "main.html" %}
+
+{% block content %}
+
+<form method="POST" action="/Kontenverwaltung/Zuteilungen/Neu">
+<input type=hidden name="Geldeingang" value="{{ Geldeingang }}" />
+
+<center>
+<table class='tablestyle2' cellpadding=2 cellspacing=0>
+	<tr valign=top><td>
+		<table class='tablestyle_inner' cellpadding=7>
+			<tr>
+				<td colspan=2 class=tableheader valign=center><h3>Geldeingang zuteilen</h3></td>
+			</tr>
+			<tr>
+				<td class='label'>Teilbetrag (&euro;):</td>
+				<td><input name="Betrag" type=text class='textbox' value="{{ Betrag }}" style="width:200px;" /></td>
+			</tr>
+			<tr>
+				<td class='label'>an Klient:</td>
+				<td>
+					<select name="Betreuter" style="width:200px;">
+{% for B in Betreute %}
+						<option value="{{ B.id }}">{{ B.vorname }} {{ B.nachname }}</option>
+{% endfor %}
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td colspan=2 align=right>
+				<input type=button value="Abbrechen, zur&uuml;ck zur &Uuml;bersicht" onclick="javascript:window.location.href='/Kontenverwaltung/Geldeingaenge/Liste';" />
+				<input type=submit value="Speichern" />
+				</td>
+			</tr>
+		</table>
+
+	</td>
+	</tr>
+</table>
+</center>
+
+</form>
+
+<script language='JavaScript' type='text/javascript'>
+	document.forms[0].{{ Fokus }}.select();
+	document.forms[0].{{ Fokus }}.focus();
+</script>
+
+{% endblock %}

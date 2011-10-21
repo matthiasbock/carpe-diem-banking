@@ -1,0 +1,55 @@
+{% extends "main.html" %}
+
+{% block content %}
+
+<table class='tablestyle2' cellpadding=2 cellspacing=0>
+	<tr valign=top><td>
+		<table class='tablestyle_inner' cellspacing=10 cellpadding=12>
+			<tr>
+				<td colspan=11 class=tableheader>
+				<h2>Meine Geldeing&auml;nge</h2>
+				</td>
+			</tr>
+			<tr>
+				<th class=tableheader>Datum</th>
+				<th class=tableheader>Geldgeber</th>
+				<th class=tableheader>Verwendungszweck</th>
+				<th class=tableheader>Betrag</th>
+				<th class=tableheader>Verbleibend</th>
+				<th class=tableheader>&nbsp;</th>
+			</tr>
+{% for G in Geldeingaenge %}
+			<tr class=evenrow>
+				<td align=center>{{ G.datum|date:"j. F Y" }}</td>
+				<td><pre>{{ G.geldgeber }}</pre></td>
+				<td><pre>{{ G.verwendungszweck }}</pre></td>
+				<td align=right>{% autoescape off %}{{ G.betrag }}{% endautoescape %}</td>
+				<td align=right>{% autoescape off %}{{ G.verbleibend }}{% endautoescape %}</td>
+				<td><a href="/Kontenverwaltung/Geldeingaenge/Entfernen?ID={{ G.id }}"><img border=0 src="/media/cancel.png" height=32 /></a></td>
+			</tr>
+	{% for Z in G.zuteilungen %}
+			<tr class=oddrow>
+				<td></td>
+				<td align=center><img border=0 src="/media/Pfeil.png" height=32 /></td>
+				<td align=center><a href="/Kontenverwaltung/Betreute/Details?ID={{ Z.betreuter }}">{{ Z.betreuterName }}</a></td>
+				<td align=right>{% autoescape off %}{{ Z.betrag }}{% endautoescape %}</td>
+				<td></td>
+				<td><a href="/Kontenverwaltung/Zuteilungen/Entfernen?ID={{ Z.id }}"><img border=0 src="/media/cancel.png" height=32 /></a></td>
+			</tr>
+	{% endfor %}
+			<tr>
+				<td></td>
+				<td align=center><a href="/Kontenverwaltung/Zuteilungen/Neu?Geldeingang={{ G.id }}"><img border=0 src="/media/Pfeil.png" height=32 /></a></td>
+				<td colspan=4></td>
+			</tr>
+{% endfor %}
+			<tr>
+				<td colspan=6>
+				<i>{{ Anzahl }} Geldeing&auml;nge.</i>
+				</td>
+			</tr>
+		</table>
+	</td></tr>
+</table>
+
+{% endblock %}

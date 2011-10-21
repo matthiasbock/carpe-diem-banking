@@ -1,0 +1,39 @@
+{% extends "Hauptseite.html" %}
+
+{% block MenuIntranet %}{% endblock %}
+{% block MenuGirokonto %}class="selected"{% endblock %}
+
+{% block Seite %}
+
+<style type="text/css">
+tr.Umsatz:hover {
+	background: #4cbafb;
+	font-color: #234956;
+	}
+</style>
+
+<script type="text/javascript">
+function Click(id) {
+	window.location.href="Kontoumsatz?ID="+str(id)
+	}
+</script>
+
+<table border=1 cellspacing=0 cellpadding=15>
+	<tr>
+		<th align=center style="width:200px;">Datum</th>
+		<th align=left   style="width:400px;">Verwendungszweck</th>
+		<th align=center style="width:200px;">Betrag</th>
+	</tr>
+{% for Umsatz in Umsaetze %}
+	<tr class=Umsatz onClick="javascript:Click({{ Umsatz.id }});">
+		<td align=center>{{ Umsatz.datum|date:"j. F Y" }}</td>
+		<td align=left>{{ Umsatz.verwendungszweck }}</td>
+		<td align=center>{% autoescape off %}{{ Umsatz.betrag }}{% endautoescape %}</td>
+	</tr>
+{% endfor %}
+	<tr>
+		<td colspan=3 align=center><b>Keine weiteren Ums&auml;tze</b></td>
+	</tr>
+</table>
+
+{% endblock %}

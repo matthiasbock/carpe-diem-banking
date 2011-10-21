@@ -1,0 +1,36 @@
+[25-Nov-2010 17:03:52] ::current_user.inc:33:[before upgrade] mysql_query() [<a href='function.mysql-query'>function.mysql-query</a>]: Access denied for user 'www-data'@'localhost' (using password: NO)
+[25-Nov-2010 17:03:52] ::current_user.inc:33:[before upgrade] mysql_query() [<a href='function.mysql-query'>function.mysql-query</a>]: A link to the server could not be established
+[25-Nov-2010 17:03:52] ::current_user.inc:34:[before upgrade] mysql_fetch_row(): supplied argument is not a valid MySQL result resource
+[25-Nov-2010 17:12:10] ::current_user.inc:33:[before upgrade] mysql_query() [<a href='function.mysql-query'>function.mysql-query</a>]: Access denied for user 'www-data'@'localhost' (using password: NO)
+[25-Nov-2010 17:12:10] ::current_user.inc:33:[before upgrade] mysql_query() [<a href='function.mysql-query'>function.mysql-query</a>]: A link to the server could not be established
+[25-Nov-2010 17:12:10] ::current_user.inc:34:[before upgrade] mysql_fetch_row(): supplied argument is not a valid MySQL result resource
+[25-Nov-2010 17:12:50] ::current_user.inc:33:[before upgrade] mysql_query() [<a href='function.mysql-query'>function.mysql-query</a>]: Access denied for user 'www-data'@'localhost' (using password: NO)
+[25-Nov-2010 17:12:50] ::current_user.inc:33:[before upgrade] mysql_query() [<a href='function.mysql-query'>function.mysql-query</a>]: A link to the server could not be established
+[25-Nov-2010 17:12:50] ::current_user.inc:34:[before upgrade] mysql_fetch_row(): supplied argument is not a valid MySQL result resource
+[25-Nov-2010 17:13:54] ::current_user.inc:33:[before upgrade] mysql_query() [<a href='function.mysql-query'>function.mysql-query</a>]: Access denied for user 'www-data'@'localhost' (using password: NO)
+[25-Nov-2010 17:13:54] ::current_user.inc:33:[before upgrade] mysql_query() [<a href='function.mysql-query'>function.mysql-query</a>]: A link to the server could not be established
+[25-Nov-2010 17:13:54] ::current_user.inc:34:[before upgrade] mysql_fetch_row(): supplied argument is not a valid MySQL result resource
+[25-Nov-2010 17:15:15] ::current_user.inc:33:[before upgrade] mysql_query() [<a href='function.mysql-query'>function.mysql-query</a>]: Access denied for user 'www-data'@'localhost' (using password: NO)
+[25-Nov-2010 17:15:15] ::current_user.inc:33:[before upgrade] mysql_query() [<a href='function.mysql-query'>function.mysql-query</a>]: A link to the server could not be established
+[25-Nov-2010 17:15:15] ::current_user.inc:34:[before upgrade] mysql_fetch_row(): supplied argument is not a valid MySQL result resource
+[25-Nov-2010 17:15:25] ::current_user.inc:33:[before upgrade] mysql_query() [<a href='function.mysql-query'>function.mysql-query</a>]: Access denied for user 'www-data'@'localhost' (using password: NO)
+[25-Nov-2010 17:15:25] ::current_user.inc:33:[before upgrade] mysql_query() [<a href='function.mysql-query'>function.mysql-query</a>]: A link to the server could not be established
+[25-Nov-2010 17:15:25] ::current_user.inc:34:[before upgrade] mysql_fetch_row(): supplied argument is not a valid MySQL result resource
+[25-Nov-2010 17:16:08] ::current_user.inc:33:[before upgrade] mysql_query() [<a href='function.mysql-query'>function.mysql-query</a>]: Access denied for user 'www-data'@'localhost' (using password: NO)
+[25-Nov-2010 17:16:08] ::current_user.inc:33:[before upgrade] mysql_query() [<a href='function.mysql-query'>function.mysql-query</a>]: A link to the server could not be established
+[25-Nov-2010 17:16:08] ::current_user.inc:34:[before upgrade] mysql_fetch_row(): supplied argument is not a valid MySQL result resource
+[25-Nov-2010 17:16:33] ::current_user.inc:33:[before upgrade] mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: Access denied for user 'www-data'@'localhost' (using password: NO)
+[25-Nov-2010 17:16:33] ::current_user.inc:34:[before upgrade] mysql_select_db(): supplied argument is not a valid MySQL-Link resource
+[25-Nov-2010 17:16:33] ::current_user.inc:36:[before upgrade] mysql_query() [<a href='function.mysql-query'>function.mysql-query</a>]: Access denied for user 'www-data'@'localhost' (using password: NO)
+[25-Nov-2010 17:16:33] ::current_user.inc:36:[before upgrade] mysql_query() [<a href='function.mysql-query'>function.mysql-query</a>]: A link to the server could not be established
+[25-Nov-2010 17:16:33] ::current_user.inc:37:[before upgrade] mysql_fetch_row(): supplied argument is not a valid MySQL result resource
+[25-Nov-2010 17:16:36] ::current_user.inc:33:[before upgrade] mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: Access denied for user 'www-data'@'localhost' (using password: NO)
+[25-Nov-2010 17:16:36] ::current_user.inc:34:[before upgrade] mysql_select_db(): supplied argument is not a valid MySQL-Link resource
+[25-Nov-2010 17:16:36] ::current_user.inc:36:[before upgrade] mysql_query() [<a href='function.mysql-query'>function.mysql-query</a>]: Access denied for user 'www-data'@'localhost' (using password: NO)
+[25-Nov-2010 17:16:36] ::current_user.inc:36:[before upgrade] mysql_query() [<a href='function.mysql-query'>function.mysql-query</a>]: A link to the server could not be established
+[25-Nov-2010 17:16:36] ::current_user.inc:37:[before upgrade] mysql_fetch_row(): supplied argument is not a valid MySQL result resource
+[25-Nov-2010 17:16:44] ::current_user.inc:33:[before upgrade] mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: Access denied for user 'www-data'@'localhost' (using password: NO)
+[25-Nov-2010 17:16:44] ::current_user.inc:34:[before upgrade] mysql_select_db(): supplied argument is not a valid MySQL-Link resource
+[25-Nov-2010 17:16:44] ::current_user.inc:36:[before upgrade] mysql_query() [<a href='function.mysql-query'>function.mysql-query</a>]: Access denied for user 'www-data'@'localhost' (using password: NO)
+[25-Nov-2010 17:16:44] ::current_user.inc:36:[before upgrade] mysql_query() [<a href='function.mysql-query'>function.mysql-query</a>]: A link to the server could not be established
+[25-Nov-2010 17:16:44] ::current_user.inc:37:[before upgrade] mysql_fetch_row(): supplied argument is not a valid MySQL result resource

@@ -1,0 +1,20 @@
+{% extends "main.html" %}
+
+{% block content %}
+
+<form method="POST" action="/Kontenverwaltung/Auszahlungen/Entfernen">
+
+<h1>M&ouml;chten sie die Auszahlung</h1>
+<h1>&uuml;ber <font color=red>{{ Betrag|floatformat:2 }} &euro;</font> an <font color=red>{{ Betreuter }}</font></h1>
+<h1>wirklich l&ouml;schen ?</h1>
+
+<input type=hidden name=ID value="{{ ID }}" />
+<br/><br/>
+
+<input type=submit value="Ja, unwiderruflich l&ouml;schen" style="width:200px;" />
+
+<input type=button value="Nein, zur&uuml;ck zur &Uuml;bersicht" onclick="javascript:window.location.href='Liste';" style="width:200px;" />
+
+</form>
+
+{% endblock %}

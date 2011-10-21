@@ -1,0 +1,43 @@
+{% extends "main.html" %}
+
+{% block content %}
+
+<table class='tablestyle2' cellpadding=2 cellspacing=0>
+	<tr valign=top><td>
+		<table class='tablestyle_inner' cellspacing=10 cellpadding=12s>
+			<tr>
+				<td colspan=11 class=tableheader>
+				<img border=0 src="/media/Sozialarbeiter.png" height=48 style="vertical-align:center"/>
+				<h2>{{ vorname }} {{ nachname }}</h2>
+				<small>* {{ geburtstag|date:"j. F Y" }}</small>
+				</td>
+			</tr>
+			<tr>
+				<td colspan=5 align=center><b>Kontostand:&nbsp;&nbsp;</b>{% autoescape off %}{{ kontostand }}{% endautoescape %}</td>
+			</tr>
+			<tr>
+				<th class=tableheader>Datum</th>
+				<th class=tableheader>Vorgang</th>
+				<th class=tableheader>Details</th>
+				<th class=tableheader>Betrag</th>
+				<th class=tableheader>&nbsp;</th>
+			</tr>
+{% for V in Vorgaenge %}
+			<tr class={% cycle 'oddrow' 'evenrow' %}>
+				<td align=center>{{ V.datum|date:"j. F Y" }}</td>
+				<td align=center>{{ V.vorgang }}</td>
+				<td><pre>{{ V.details }}</pre></td>
+				<td align=right>{% autoescape off %}{{ V.betrag }}{% endautoescape %}</td>
+				<td><a href="{{ V.link }}"><img border=0 src="/media/cancel.png" height=32 /></a></td>
+			</tr>
+{% endfor %}
+			<tr>
+				<td colspan=6>
+				<i>{{ Anzahl }} Vorg&auml;nge.</i> Initialer Kontostand war {% autoescape off %}{{ startkontostand }}{% endautoescape %} .
+				</td>
+			</tr>
+		</table>
+	</td></tr>
+</table>
+
+{% endblock %}

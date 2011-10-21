@@ -1,0 +1,36 @@
+
+<table width='100%' cellspacing=1>
+	<tr>	<td width='130'>&nbsp;</td>
+		<td width='130'>&nbsp;</td>
+		<td width='*' align=center>
+<center>
+<h1>Willkommen, <nobr>{{ Anrede }}</nobr> !</h1>
+<h3>{% if Sekretariat %}Sie sind als Sekretariat angemeldet, d.h. sie sehen alle Klienten und Buchungen k&ouml;nnen aber keine &Auml;nderungen vornehmen.{% else %}Ihr Kontostand betr&auml;gt {% autoescape off %}{{ Kontostand }}{% endautoescape %}{% endif %}</h3>
+</center>
+</td>
+		<td width='130'>
+			<a href='javascript:window.print()'>
+			<img src='/media/print.png' width='32' border='0' alt='Drucken'><br/>
+			<p style='float:left;'>Seite ausdrucken</p>
+			</a>
+		</td>
+		<td width='130'>
+			<a href="/Kontenverwaltung/logout/">
+			<img src='/media/logout.png' height='32' border='0' alt='Abmelden'><br/>
+			<p style='float:left;'>Abmelden</p>
+			</a>
+		</td>
+
+	</tr>
+</table>
+
+<br/>
+
+<center>
+<div class="tabs">
+<a {% if MenuBetreute %}class="selected"{% endif %} href="/Kontenverwaltung/Betreute/Liste">{% if Sekretariat %}Alle{% else %}Meine{% endif %} Klienten</a>
+<a {% if MenuGeldeingaenge %}class="selected"{% endif %} href="/Kontenverwaltung/Geldeingaenge/Liste">{% if Sekretariat %}Alle{% else %}Meine{% endif %} Geldeing&auml;nge</a>
+<a {% if MenuAuszahlungen %}class="selected"{% endif %} href="/Kontenverwaltung/Auszahlungen/Liste">{% if Sekretariat %}Alle {% endif %}Auszahlungen</a>
+<a {% if MenuForderungen %}class="selected"{% endif %} href="/Kontenverwaltung/Forderungen/Liste">{% if Sekretariat %}Alle {% endif %}Forderungen</a>
+</div>
+</center>

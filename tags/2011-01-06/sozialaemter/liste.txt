@@ -1,0 +1,12 @@
+"";"GELDGEBER";"Bezirksamt Charlottenburg - Wilmersdorf";;;;;;
+"";"GELDGEBER";"Bezirksamt Friedrichshain - Kreuzberg";;;;;;
+"";"GELDGEBER";"Bezirksamt Lichtenberg";;;;;;
+"";"GELDGEBER";"Bezirksamt Marzahn - Hellersdorf";;;;;;
+"";"GELDGEBER";"Bezirksamt Mitte";;;;;;
+"";"GELDGEBER";"Bezirksamt Neukölln";;;;;;
+"";"GELDGEBER";"Bezirksamt Pankow";;;;;;
+"";"GELDGEBER";"Bezirksamt Reinickendorf";;;;;;
+"";"GELDGEBER";"Bezirksamt Spandau";;;;;;
+"";"GELDGEBER";"Bezirksamt Steglitz - Zehlendorf";;;;;;
+"";"GELDGEBER";"Bezirksamt Tempelhof - Schöneberg";;;;;;
+"";"GELDGEBER";"Bezirksamt Treptow - Köpenick";;;;;;

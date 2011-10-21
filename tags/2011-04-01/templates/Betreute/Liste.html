@@ -1,0 +1,38 @@
+{% extends "main.html" %}
+
+{% block content %}
+
+<table class='tablestyle2' cellpadding=2 cellspacing=0>
+	<tr valign=top><td>
+		<table class='tablestyle_inner' cellspacing=10 cellpadding=12s>
+			<tr>
+				<td colspan=11 class=tableheader>
+				<h2>Meine Betreuten</h2>
+				</td>
+			</tr>
+			<tr>
+				<th class=tableheader>&nbsp;</td>
+				<th class=tableheader>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+				<th class=tableheader>Geburtstag</th>
+				<th class=tableheader>Kontostand</th>
+				<th class=tableheader>&nbsp;</th>
+			</tr>
+{% for Betreuter in Betreute %}
+			<tr class={% cycle 'oddrow' 'evenrow' %}>
+				<td><img border=0 src="/media/Sozialarbeiter.png" height=48 /></td>
+				<td align=center><a href="Details?ID={{ Betreuter.id }}">{{ Betreuter.vorname }} {{ Betreuter.nachname }}</a></td>
+				<td align=center>{{ Betreuter.geburtstag|date:"j. F Y" }}</td>
+				<td align=right>{% autoescape off %}{{ Betreuter.kontostand }}{% endautoescape %}</td>
+				<td><a href="Entfernen?ID={{ Betreuter.id }}"><img border=0 src="/media/cancel.png" height=32 /></a></td>
+			</tr>
+{% endfor %}
+			<tr>
+				<td colspan=6>
+				<i>Sie betreuen {{ Anzahl }} Personen.</i>
+				</td>
+			</tr>
+		</table>
+	</td></tr>
+</table>
+
+{% endblock %}

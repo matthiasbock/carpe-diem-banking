@@ -1,0 +1,54 @@
+<html>
+
+{% include "head.html" %}
+
+<body>
+{% include "header.html" %}
+
+{% include "menu.html" %}
+
+<table class="logoutBar" cellspacing=1>
+<tr>
+	<td>&nbsp;</td>
+</tr>
+</table>
+
+<center>
+<table cellpadding=0 cellspacing=0>
+<tr>
+<td align=center>
+
+<br/>
+
+{% if Nachrichtenbox %}
+<div id='msgbox'><div class='note_msg'>{% autoescape off %}{{ Nachricht }}{% endautoescape %}</div></div>
+{% endif %}
+{% if Fehlerbox %}
+<div id='msgbox'><div class='err_msg'>{% autoescape off %}{{ Fehler }}{% endautoescape %}</div></div>
+{% endif %}
+
+{% if not Sekretariat %}{% include "options.html" %}{% endif %}
+
+<br/><br/>
+
+{% block content %}{% endblock %}
+
+<br/><br/>
+
+</td>
+</tr>
+</table>
+</center>
+
+<table class=logoutBar>
+<tr>
+	<td align=right>Abgerufen am {% now "j. F Y H:i" %} Uhr</td>
+</tr>
+</table>
+
+<br/><br/>
+
+{% include "footer.html" %}
+</body>
+
+</html>

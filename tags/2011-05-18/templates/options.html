@@ -1,0 +1,9 @@
+{% if showoptions %}
+<h2>Was möchten sie als nächstes tun ?</h2>
+<br/>
+
+{% for key,value in options.items %}
+<input type=button style="width:300px" value="{% autoescape off %}{{ key }}{% endautoescape %}" onclick="javacsript:window.location.href='/Kontenverwaltung/{{ value }}';" /><br/><br/>
+{% endfor %}
+
+{% endif %}

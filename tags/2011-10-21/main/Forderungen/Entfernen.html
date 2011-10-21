@@ -1,0 +1,21 @@
+{% extends "main.html" %}
+
+{% block content %}
+
+<form method="POST" action="/Kontenverwaltung/Forderungen/Entfernen">
+
+<h1>M&ouml;chten sie die Forderung</h1>
+<h1>von <font color=red>{{ Kreditor }}</font> gegen&uuml;ber <font color=red>{{ Schuldner }}</font> &uuml;ber <font color=red>{{ Betrag|floatformat:2 }} &euro;</font><br/>
+und alle zugeh&ouml;rigen Tilgungszahlungen</h1>
+<h1>wirklich l&ouml;schen ?</h1>
+
+<input type=hidden name=ID value="{{ ID }}" />
+<br/><br/>
+
+<input type=submit value="Ja, unwiderruflich l&ouml;schen" style="width:200px;" />
+
+<input type=button value="Nein, zur&uuml;ck zur &Uuml;bersicht" onclick="javascript:window.location.href='Liste';" style="width:200px;" />
+
+</form>
+
+{% endblock %}
