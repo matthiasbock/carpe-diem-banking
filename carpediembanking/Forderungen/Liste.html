@@ -27,23 +27,23 @@
 				<td><pre>{{ F.notiz }}</pre></td>
 				<td align=right>{% autoescape off %}{{ F.gesamtforderung }}{% endautoescape %}</td>
 				<td align=right>{% autoescape off %}{{ F.offeneforderung }}{% endautoescape %}</td>
-				<td>{% if not Sekretariat %}<a href="/Kontenverwaltung/Forderungen/Entfernen?ID={{ F.id }}">{% endif %}<img border=0 src="/media/cancel.png" height=32 /></a></td>
+				<td>{% if not Sekretariat %}<a href="/Kontenverwaltung/Forderungen/Entfernen?ID={{ F.id }}">{% endif %}<img border=0 src="/Django/carpediembanking/static/cancel.png" height=32 /></a></td>
 			</tr>
 	{% for T in F.tilgungen %}
 			<tr class=oddrow>
 				<td></td>
-				<td align=center><img border=0 src="/media/Pfeil.png" height=32 /></td>
+				<td align=center><img border=0 src="/Django/carpediembanking/static/Pfeil.png" height=32 /></td>
 				<td></td>
 				<td align=center>{{ T.datum|date:"j. F Y" }}</td>
 				<td align=right>{% autoescape off %}{{ T.betrag }}{% endautoescape %}</td>
 				<td></td>
-				<td>{% if not Sekretariat %}<a href="/Kontenverwaltung/Tilgungen/Entfernen?ID={{ T.id }}">{% endif %}<img border=0 src="/media/cancel.png" height=32 /></a></td>
+				<td>{% if not Sekretariat %}<a href="/Kontenverwaltung/Tilgungen/Entfernen?ID={{ T.id }}">{% endif %}<img border=0 src="/Django/carpediembanking/static/cancel.png" height=32 /></a></td>
 			</tr>
 	{% endfor %}
 	{% if not Sekretariat %}
 			<tr>
 				<td></td>
-				<td align=center><a href="/Kontenverwaltung/Tilgungen/Neu?Forderung={{ F.id }}"><img border=0 src="/media/Pfeil.png" height=32 /></a></td>
+				<td align=center><a href="/Kontenverwaltung/Tilgungen/Neu?Forderung={{ F.id }}"><img border=0 src="/Django/carpediembanking/static/Pfeil.png" height=32 /></a></td>
 				<td colspan=5></td>
 			</tr>
 	{% endif %}

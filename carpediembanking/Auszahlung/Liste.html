@@ -21,7 +21,7 @@
 				<td align=center>{{ A.datum|date:"j. F Y" }}</td>
 				<td><a href="/Kontenverwaltung/Betreute/Details?ID={{ A.betreuterID }}">{{ A.betreuterName }}</a></td>
 				<td>{% autoescape off %}{{ A.betrag }}{% endautoescape %}</b></td>
-				<td>{% if not Sekretariat %}<a href="/Kontenverwaltung/Auszahlungen/Entfernen?ID={{ A.id }}">{% endif %}<img border=0 src="/media/cancel.png" height=32 /></a></td>
+				<td>{% if not Sekretariat %}<a href="/Kontenverwaltung/Auszahlungen/Entfernen?ID={{ A.id }}">{% endif %}<img border=0 src="/Django/carpediembanking/static/cancel.png" height=32 /></a></td>
 			</tr>
 {% endfor %}
 			<tr>

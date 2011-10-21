@@ -25,22 +25,22 @@
 				<td><pre>{{ G.verwendungszweck }}</pre></td>
 				<td align=right>{% autoescape off %}{{ G.betrag }}{% endautoescape %}</td>
 				<td align=right>{% autoescape off %}{{ G.verbleibend }}{% endautoescape %}</td>
-				<td>{% if not Sekretariat %}<a href="/Kontenverwaltung/Geldeingaenge/Entfernen?ID={{ G.id }}">{% endif %}<img border=0 src="/media/cancel.png" height=32 /></a></td>
+				<td>{% if not Sekretariat %}<a href="/Kontenverwaltung/Geldeingaenge/Entfernen?ID={{ G.id }}">{% endif %}<img border=0 src="/Django/carpediembanking/static/cancel.png" height=32 /></a></td>
 			</tr>
 	{% for Z in G.zuteilungen %}
 			<tr class=oddrow>
 				<td></td>
-				<td align=center><img border=0 src="/media/Pfeil.png" height=32 /></td>
+				<td align=center><img border=0 src="/Django/carpediembanking/static/Pfeil.png" height=32 /></td>
 				<td align=center><a href="/Kontenverwaltung/Betreute/Details?ID={{ Z.betreuter }}">{{ Z.betreuterName }}</a></td>
 				<td align=right>{% autoescape off %}{{ Z.betrag }}{% endautoescape %}</td>
 				<td></td>
-				<td>{% if not Sekretariat %}<a href="/Kontenverwaltung/Zuteilungen/Entfernen?ID={{ Z.id }}">{% endif %}<img border=0 src="/media/cancel.png" height=32 /></a></td>
+				<td>{% if not Sekretariat %}<a href="/Kontenverwaltung/Zuteilungen/Entfernen?ID={{ Z.id }}">{% endif %}<img border=0 src="/Django/carpediembanking/static/cancel.png" height=32 /></a></td>
 			</tr>
 	{% endfor %}
 	{% if not Sekretariat %}
 			<tr>
 				<td></td>
-				<td align=center><a href="/Kontenverwaltung/Zuteilungen/Neu?Geldeingang={{ G.id }}"><img border=0 src="/media/Pfeil.png" height=32 /></a></td>
+				<td align=center><a href="/Kontenverwaltung/Zuteilungen/Neu?Geldeingang={{ G.id }}"><img border=0 src="/Django/carpediembanking/static/Pfeil.png" height=32 /></a></td>
 				<td colspan=4></td>
 			</tr>
 	{% endif %}
