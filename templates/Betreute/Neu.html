@@ -1,0 +1,50 @@
+{% extends "main.html" %}
+
+{% block content %}
+
+<form method="POST" action="/Kontenverwaltung/Betreute/Neu">
+
+<center>
+<table class='tablestyle2' cellpadding=2 cellspacing=0>
+	<tr valign=top><td>
+		<table class='tablestyle_inner' cellpadding=7>
+			<tr>
+				<td colspan=2 class=tableheader valign=center><h3>Neuen Betreuten hinzuf&uuml;gen</h3></td>
+			</tr>
+			<tr>
+				<td class='label'>Vorname:</td>
+				<td><input name="Vorname" type=text class='textbox' value="{{ Vorname }}" /></td>
+			</tr>
+			<tr>
+				<td class='label'>Nachname:</td>
+				<td><input name="Nachname" type=text class='textbox' value="{{ Nachname }}" /></td>
+			</tr>
+			<tr>
+				<td class='label'>Geburtstag (TT.MM.JJJJ):</td>
+				<td><input name="Geburtstag" type=text class='textbox' value="{{ Geburtstag }}" /></td>
+			</tr>
+			<tr>
+				<td class='label'>Kontostand zu Anfang (&euro;):</td>
+				<td><input name="Startkontostand" type=text class='textbox' value="{{ Startkontostand }}" /></td>
+			</tr>
+			<tr>
+				<td colspan=2 align=right>
+				<input type=button value="Abbrechen, zur&uuml;ck zur &Uuml;bersicht" onclick="javascript:window.location.href='/Kontenverwaltung/Betreute/Liste';" />
+				<input type=submit value="Speichern" />
+				</td>
+			</tr>
+		</table>
+
+	</td>
+	</tr>
+</table>
+</center>
+
+</form>
+
+<script language='JavaScript' type='text/javascript'>
+	document.forms[0].{{ Fokus }}.select();
+	document.forms[0].{{ Fokus }}.focus();
+</script>
+
+{% endblock %}
