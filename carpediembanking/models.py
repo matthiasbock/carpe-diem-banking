@@ -23,6 +23,9 @@ class AuthUser(models.Model):
     last_name = models.CharField(max_length=90)
     email = models.CharField(max_length=225)
     password = models.CharField(max_length=384)
+    is_staff = models.IntegerField()
+    is_active = models.IntegerField()
+    is_superuser = models.IntegerField()
     last_login = models.DateTimeField()
     date_joined = models.DateTimeField()
     class Meta:
