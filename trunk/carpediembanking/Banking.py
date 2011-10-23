@@ -19,3 +19,4 @@ def Kontenumsaetze( request ):
 	for Umsatz in Girokontenumsaetze.objects.using(DB).filter( girokonto=myGirokonto ):
 		params["Umsaetze"].append( { "id":Umsatz.id, "datum":Umsatz.datum, "verwendungszweck":Umsatz.verwendungszweck, "betrag":currency(Umsatz.betrag) } )
 	return render_to_response("Kontenumsaetze.html", params)
+

@@ -36,3 +36,4 @@ def Klientenkasse( request ):
 def Zuteilung( request ):
 	params = defaults( request )
 	return render_to_response("Baustelle.html", params)
+

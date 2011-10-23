@@ -20,13 +20,13 @@ urlpatterns = patterns('',
 	# media
 	(r'^carpediembanking/static/(?P<path>.*)$',		'django.views.static.serve', {'document_root': '/var/www/Django/carpediembanking/static', 'show_indexes': True}), 
 
-	(r'^carpediembanking/$',				'Django.carpediembanking.views.Index'), # django.contrib.auth.views.login # ruft auf: registration/login.html
-	(r'^carpediembanking/login/$',				'Django.carpediembanking.views.Login'),
-	(r'^carpediembanking/logout/$',				'Django.carpediembanking.views.Logout'),
-	#    (r'^carpediembanking/IP$',				'Django.carpediembanking.views.IP'),
-	(r'^carpediembanking/ping$',				'Django.carpediembanking.views.ping'),
+	(r'^carpediembanking/$',				'Django.carpediembanking.main.Index'), # django.contrib.auth.views.login # ruft auf: registration/login.html
+	(r'^carpediembanking/login/$',				'Django.carpediembanking.main.Login'),
+	(r'^carpediembanking/logout/$',				'Django.carpediembanking.main.Logout'),
+	#    (r'^carpediembanking/IP$',				'Django.carpediembanking.main.IP'),
+	(r'^carpediembanking/ping$',				'Django.carpediembanking.main.ping'),
 
-	#    (r'^carpediembanking/Intranet/$',			'Django.carpediembanking.views.Baustelle'),
+	#    (r'^carpediembanking/Intranet/$',			'Django.carpediembanking.main.Baustelle'),
 	(r'^carpediembanking/Intranet/$',			'Django.carpediembanking.Intranet.Index'),
 	(r'^carpediembanking/Klientenkasse$',			'Django.carpediembanking.Intranet.Klientenkasse'),
 	(r'^carpediembanking/Zuteilung$',			'Django.carpediembanking.Intranet.Zuteilung'),
@@ -44,7 +44,7 @@ urlpatterns = patterns('',
 
 	# die nachfolgende Aufzählung ist überholt
 	# evtl. aber noch hilfreich für die Teile, die wieder eingebunden werden
-	(r'^carpediembanking/Start$',				'Django.carpediembanking.views.start'),
+	(r'^carpediembanking/Start$',				'Django.carpediembanking.main.start'),
 	(r'^carpediembanking/Betreute/Neu$',			'Django.carpediembanking.Betreute.Betreute.neu'),
 	(r'^carpediembanking/Betreute/Details$',		'Django.carpediembanking.Betreute.Betreute.details'),
 	(r'^carpediembanking/Betreute/Liste$',			'Django.carpediembanking.Betreute.Betreute.liste'),
