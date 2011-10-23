@@ -9,23 +9,30 @@
 
 from django.db import models
 
-class Autorisierteips(models.Model):
+class AuthIP(models.Model):
     id = models.IntegerField(primary_key=True, db_column='ID') # Field name made lowercase.
     name = models.CharField(max_length=60, db_column='Name') # Field name made lowercase.
     ip = models.CharField(max_length=45, db_column='IP') # Field name made lowercase.
     class Meta:
-        db_table = u'AutorisierteIPs'
+        db_table = u'auth_ip'
+
+class AuthUser(models.Model):
+    id = models.IntegerField(primary_key=True)
+    username = models.CharField(unique=True, max_length=90)
+    first_name = models.CharField(max_length=90)
+    last_name = models.CharField(max_length=90)
+    email = models.CharField(max_length=225)
+    password = models.CharField(max_length=384)
+    last_login = models.DateTimeField()
+    date_joined = models.DateTimeField()
+    class Meta:
+        db_table = u'auth_user'
 
 class Betreuer(models.Model):
     id = models.IntegerField(primary_key=True, db_column='ID') # Field name made lowercase.
-    vorname = models.CharField(max_length=150, db_column='Vorname') # Field name made lowercase.
-    nachname = models.CharField(max_length=150, db_column='Nachname') # Field name made lowercase.
-    email = models.CharField(max_length=150, db_column='Email') # Field name made lowercase.
+    auth_user = models.IntegerField()
     farbe = models.CharField(max_length=45, db_column='Farbe') # Field name made lowercase.
     klientenkasse = models.IntegerField(null=True, db_column='Klientenkasse', blank=True) # Field name made lowercase.
-    auth_user_id = models.IntegerField()
-    administrator = models.IntegerField(db_column='Administrator') # Field name made lowercase.
-    nurlesen = models.IntegerField(db_column='NurLesen') # Field name made lowercase.
     class Meta:
         db_table = u'Betreuer'
 
@@ -132,102 +139,4 @@ class Zuteilungen(models.Model):
     anklient = models.IntegerField(db_column='AnKlient') # Field name made lowercase.
     class Meta:
         db_table = u'Zuteilungen'
-
-class AuthGroup(models.Model):
-    id = models.IntegerField(primary_key=True)
-    name = models.CharField(unique=True, max_length=240)
-    class Meta:
-        db_table = u'auth_group'
-
-class AuthGroupPermissions(models.Model):
-    id = models.IntegerField(primary_key=True)
-    group_id = models.IntegerField(unique=True)
-    permission_id = models.IntegerField()
-    class Meta:
-        db_table = u'auth_group_permissions'
-
-class AuthMessage(models.Model):
-    id = models.IntegerField(primary_key=True)
-    user_id = models.IntegerField()
-    message = models.TextField()
-    class Meta:
-        db_table = u'auth_message'
-
-class AuthPermission(models.Model):
-    id = models.IntegerField(primary_key=True)
-    name = models.CharField(max_length=150)
-    content_type_id = models.IntegerField()
-    codename = models.CharField(unique=True, max_length=255)
-    class Meta:
-        db_table = u'auth_permission'
-
-class AuthUser(models.Model):
-    id = models.IntegerField(primary_key=True)
-    username = models.CharField(unique=True, max_length=90)
-    first_name = models.CharField(max_length=90)
-    last_name = models.CharField(max_length=90)
-    email = models.CharField(max_length=225)
-    password = models.CharField(max_length=384)
-    is_staff = models.IntegerField()
-    is_active = models.IntegerField()
-    is_superuser = models.IntegerField()
-    last_login = models.DateTimeField()
-    date_joined = models.DateTimeField()
-    class Meta:
-        db_table = u'auth_user'
-
-class AuthUserGroups(models.Model):
-    id = models.IntegerField(primary_key=True)
-    user_id = models.IntegerField(unique=True)
-    group_id = models.IntegerField()
-    class Meta:
-        db_table = u'auth_user_groups'
-
-class AuthUserUserPermissions(models.Model):
-    id = models.IntegerField(primary_key=True)
-    user_id = models.IntegerField(unique=True)
-    permission_id = models.IntegerField()
-    class Meta:
-        db_table = u'auth_user_user_permissions'
-
-class DjangoAdminLog(models.Model):
-    id = models.IntegerField(primary_key=True)
-    action_time = models.DateTimeField()
-    user_id = models.IntegerField()
-    content_type_id = models.IntegerField(null=True, blank=True)
-    object_id = models.TextField(blank=True)
-    object_repr = models.CharField(max_length=600)
-    action_flag = models.IntegerField()
-    change_message = models.TextField()
-    class Meta:
-        db_table = u'django_admin_log'
-
-class DjangoContentType(models.Model):
-    id = models.IntegerField(primary_key=True)
-    name = models.CharField(max_length=300)
-    app_label = models.CharField(unique=True, max_length=255)
-    model = models.CharField(unique=True, max_length=255)
-    class Meta:
-        db_table = u'django_content_type'
-
-class DjangoSession(models.Model):
-    session_key = models.CharField(max_length=120, primary_key=True)
-    session_data = models.TextField()
-    expire_date = models.DateTimeField()
-    class Meta:
-        db_table = u'django_session'
-
-class DjangoSite(models.Model):
-    id = models.IntegerField(primary_key=True)
-    domain = models.CharField(max_length=300)
-    name = models.CharField(max_length=150)
-    class Meta:
-        db_table = u'django_site'
-
-class RegistrationRegistrationprofile(models.Model):
-    id = models.IntegerField(primary_key=True)
-    user_id = models.IntegerField(unique=True)
-    activation_key = models.CharField(max_length=120)
-    class Meta:
-        db_table = u'registration_registrationprofile'
 

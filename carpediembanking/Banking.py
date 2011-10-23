@@ -2,15 +2,16 @@
 
 from Django.carpediembanking.models import *
 from Django.carpediembanking.includes import *
+from decorators import global_decorator
 
 from django.shortcuts import render_to_response
 from django.http import HttpResponse, HttpResponseRedirect
-from django.views.decorators.cache import cache_control
-from django.contrib.auth.decorators import login_required
 
+@global_decorator
 def Index( request ):
 	return HttpResponseRedirect("/Django/carpediembanking/Kontenumsaetze")
 
+@global_decorator
 def Kontenumsaetze( request ):
 	params = defaults( request )
 	myGirokonto = 1 #request.user....
