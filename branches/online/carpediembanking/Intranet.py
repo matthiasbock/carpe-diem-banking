@@ -5,11 +5,7 @@ from Django.carpediembanking.includes import *
 
 from django.shortcuts import render_to_response
 from django.http import HttpResponse, HttpResponseRedirect
-from django.views.decorators.cache import cache_control
-from django.contrib.auth.decorators import login_required
 
-@cache_control( max_age=1, must_revalidate=True, no_cache=True )
-#@login_required
 def Index( request ):
 	return HttpResponseRedirect("/Kontenverwaltung/Klientenkasse")
 
@@ -19,7 +15,7 @@ def Klientenkasse( request ):
 	try:
 		Kasse = Klientenkassen.objects.get( id=Betreuer.objects.get( auth_user_id=request.user.id ).klientenkasse )
 	except:
-		return HttpResponseRedirect("Girokonto")
+		Kasse = Klientenkassen.objects.get( id=1 )
 	params["AktuellesSaldo"] = currency( Kasse.startsaldo )
 	params["Startdatum"] = Kasse.startdatum
 	params["Startsaldo"] = currency( Kasse.startsaldo )
