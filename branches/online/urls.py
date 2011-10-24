@@ -12,11 +12,11 @@ urlpatterns = patterns('',
 
     (r'^Kontenverwaltung/media/(?P<path>.*)$',		'django.views.static.serve', {'document_root': settings.MEDIA_ROOT, 'show_indexes': True}), 
 
-    (r'^Kontenverwaltung/$',				'Django.carpediembanking.views.Index'), # django.contrib.auth.views.login # ruft auf: registration/login.html
-    (r'^Kontenverwaltung/login/$',			'Django.carpediembanking.views.Login'),
-    (r'^Kontenverwaltung/logout/$',			'Django.carpediembanking.views.Logout'),
+    (r'^Kontenverwaltung/$',				'Django.carpediembanking.main.Index'), # django.contrib.auth.views.login # ruft auf: registration/login.html
+    (r'^Kontenverwaltung/login/$',			'Django.carpediembanking.main.Login'),
+    (r'^Kontenverwaltung/logout/$',			'Django.carpediembanking.main.Logout'),
 
-#    (r'^Kontenverwaltung/Intranet/$',			'Django.carpediembanking.views.Baustelle'),
+#    (r'^Kontenverwaltung/Intranet/$',			'Django.carpediembanking.main.Baustelle'),
     (r'^Kontenverwaltung/Intranet/$',			'Django.carpediembanking.Intranet.Index'),
     (r'^Kontenverwaltung/Klientenkasse$',		'Django.carpediembanking.Intranet.Klientenkasse'),
     (r'^Kontenverwaltung/Zuteilung$',			'Django.carpediembanking.Intranet.Zuteilung'),
