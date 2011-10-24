@@ -47,12 +47,13 @@ def Klient( request ):			# Umsätze des Klienten anzeigen
 	
 	# Auszahlungen
 	for E in Klientenauszahlungen.objects.filter( anklient = Klient.id ):
+		a = AuthUser.objects.get( id=request.user.id )
 		try:
 			B = Betreuer.objects.get( id=E.betreuer )
 		except:
 			B = Betreuer.objects.get( id=1 )
 		K = Klientenkassen.objects.get( id=E.ausklientenkasse )
-		params["Ergebnisse"].append( {"typ":"Auszahlung", "id":E.id, "datum":E.datum, "vorgang":"Barauszahlung, "+B.vorname+" "+B.nachname+"<br/><i>"+K.name+"</i>", "betrag":currency( -E.betrag ) } )
+		params["Ergebnisse"].append( {"typ":"Auszahlung", "id":E.id, "datum":E.datum, "vorgang":"Barauszahlung, "+a.first_name+" "+a.last_name+"<br/><i>"+K.name+"</i>", "betrag":currency( -E.betrag ) } )
 		params["Anzahl"] += 1
 		params["Saldo"] -= E.betrag
 	
