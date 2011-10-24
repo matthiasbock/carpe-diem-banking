@@ -1,7 +1,7 @@
 # -*- coding: iso-8859-15 -*-
 
-from Kontenverwaltung.main.models import *
-from Kontenverwaltung.main.includes import *
+from Django.carpediembanking.models import *
+from Django.carpediembanking.includes import *
 
 from django.shortcuts import render_to_response
 from django.http import HttpResponse, HttpResponseRedirect

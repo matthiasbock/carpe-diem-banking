@@ -1,7 +1,7 @@
 # -*- coding: iso-8859-15 -*-
 
-from Kontenverwaltung.main.models import *
-from Kontenverwaltung.main.includes import *
+from Django.carpediembanking.models import *
+from Django.carpediembanking.includes import *
 
 from django.shortcuts import render_to_response
 from django.template import RequestContext
@@ -33,7 +33,7 @@ def Login(request):
 	user = None
 	users = User.objects.all().order_by('last_name')
 	if request.method == "GET":
-		return render_to_response('registration/login.html', {'fehlgeschlagen':False, 'Benutzer':users})
+		return render_to_response('login.html', {'fehlgeschlagen':False, 'Benutzer':users})
 	else:
 		username = request.POST['username']
 		password = request.POST['password']
@@ -43,7 +43,7 @@ def Login(request):
 			setsession(request, 'login', 'successfull')
 			return HttpResponseRedirect('/Kontenverwaltung/Intranet/')
 		else:
-			return render_to_response('registration/login.html', {'fehlgeschlagen':True, 'Benutzer':users})
+			return render_to_response('login.html', {'fehlgeschlagen':True, 'Benutzer':users})
 
 @cache_control( max_age=1, must_revalidate=True, no_cache=True )
 def Logout(request):

@@ -1,6 +1,6 @@
 # -*- coding: iso-8859-15 -*-
 
-from Kontenverwaltung.main.models import *
+from Django.carpediembanking.models import *
 
 import datetime
 from operator import itemgetter

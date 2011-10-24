@@ -1,8 +1,8 @@
 DEBUG = True
 TEMPLATE_DEBUG = True 
 
-PROJECT_OPTION_ROOT = "/var/www/Kontenverwaltung/"
-PROJECT_OPTION_HEAD_URL = "Kontenverwaltung/"
+PROJECT_OPTION_ROOT = "/var/www/Django/"
+PROJECT_OPTION_HEAD_URL = "Django/"
 
 ADMINS = (
     ('Matthias Bock', 'matthias.bock@hu-berlin.de'),
@@ -43,12 +43,13 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
 )
 
-LOGIN_URL = '/Kontenverwaltung/Login'
+LOGIN_URL = '/Django/Login'
 
-ROOT_URLCONF = 'Kontenverwaltung.urls'
+ROOT_URLCONF = 'Django.urls'
 
 TEMPLATE_DIRS = (
-    '/var/www/Kontenverwaltung/main/templates',
+    '/var/www/Django/carpediembanking/registration',
+    '/var/www/Django/carpediembanking/templates',
 )
 
 INSTALLED_APPS = (
@@ -57,6 +58,6 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.sites',
     'django.contrib.admin',
-    'Kontenverwaltung.main',
+    'Django.carpediembanking',
 )
 
