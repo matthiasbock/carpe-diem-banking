@@ -2,7 +2,7 @@
 
 = SSL Client Authentication =
 
-Browser identifizieren sich mit ihrem eigenen privaten Schlüssel / Zertifikat gegenüber dem Server.
+Bei diesem Verfahren identifizieren sich Browser mit ihrem eigenen privaten Schlüssel / Zertifikat gegenüber dem Server.
 Der Server hat eine Liste von Schlüsseln, denen er vertraut
 und erlaubt diesen den Zugriff ohne Passwort bzw. loggt die
 entsprechenden Benutzer automatisch ein.
