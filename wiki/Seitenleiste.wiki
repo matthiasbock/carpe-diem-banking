@@ -1,6 +1,7 @@
  * *[Startseite Allgemein]*
  * *[Funktionsumfang Funktionen]*
   * [Splitten Geldeingänge splitten]
+  * [Schulden]
  * *[Sicherheit]*
   * [ClientAuthentication SSL Client Authentication]
  * *[Datenbank]*
