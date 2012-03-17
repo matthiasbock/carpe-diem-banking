@@ -1,0 +1,13 @@
+#summary Girokonten
+
+= Girokonten =
+
+ * ID
+ * Name
+ * Kontonummer
+ * BLZ
+ * Kreditinstitut
+ * HBCI_Sync: true | false
+ * HBCI_PIN
+ * Sync_Startdatum
+ * Sync_Startsaldo
