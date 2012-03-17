@@ -5,3 +5,9 @@
  * *[Sicherheit]*
   * [ClientAuthentication SSL Client Authentication]
  * *[Datenbank]*
+  * Benutzer
+  * Girokonten
+  * Klienten
+   * Stammdaten
+   * Umsätze
+   * Schulden
