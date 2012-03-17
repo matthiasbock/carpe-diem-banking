@@ -15,11 +15,12 @@ DATABASES = {
 		'ENGINE':	'django.db.backends.mysql',
 		'NAME':		'carpediembanking',
 		'USER':		'Django',
-		'PASSWORD':	'Django-PW',
+		'PASSWORD':	'',
 		'HOST':		'',
 		'PORT':		'',
 		}
 	}
+DATABASES['carpediembanking'] = DATABASES['default']
 
 TEMPLATE_DIRS = (
 	'/var/www/Django/carpediembanking',
