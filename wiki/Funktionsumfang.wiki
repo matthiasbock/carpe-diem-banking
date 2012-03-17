@@ -14,5 +14,6 @@
   * + _Ausdrucken von Auszahlungsbelegen_
   * Eingabe von Überweisungen im Auftrag eines Klienten (von einem realen Bankkonto des Vereins)
   * + _Ausdrucken von Überweisungsbelegen_
+ * [Schulden Verwaltung der Schulden der Klienten]
 
 http://carpe-diem-banking.googlecode.com/svn/doc/Klienten.png
