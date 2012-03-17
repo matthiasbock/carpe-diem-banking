@@ -1,4 +1,5 @@
- * [Startseite Info]
- * [Funktionsumfang]
+ * *[Startseite Allgemein]*
+ * *[Funktionsumfang Funktionen]*
   * [Splitten Geldeingänge splitten]
- * [ClientAuthentication SSL Client Authentication]
+ * *[Sicherheit]*
+  * [ClientAuthentication SSL Client Authentication]
