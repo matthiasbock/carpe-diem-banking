@@ -11,7 +11,7 @@
  * *Datenbank*
   * [Benutzer]
   * [Girokonten]
-   * [Girokontenumsaetze Girokontenumsätze]
+   * [Girokontoumsaetze Girokontoumsätze]
    * [Zuteilungen]
   * Klienten
    * [Stammdaten]
