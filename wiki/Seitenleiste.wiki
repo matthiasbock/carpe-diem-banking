@@ -22,3 +22,5 @@
    * [Schulden]
     * [Forderungen]
     * [Tilgungen]
+ * *[HBCI]*
+  * [Synchronisierung]
