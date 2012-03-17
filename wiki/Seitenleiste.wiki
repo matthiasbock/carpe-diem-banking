@@ -4,10 +4,10 @@
   * [Schulden]
  * *[Sicherheit]*
   * [ClientAuthentication SSL Client Authentication]
- * *[Datenbank]*
-  * Benutzer
-  * Girokonten
-  * Klienten
-   * Stammdaten
-   * Umsätze
-   * Schulden
+ * *Datenbank*
+  * [Benutzer]
+  * [Girokonten]
+  * [Klienten]
+   * [Stammdaten]
+   * [Umsaetze Umsätze]
+   * [Schulden]
