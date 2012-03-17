@@ -1,13 +1,24 @@
  * *[Startseite Allgemein]*
  * *[Funktionsumfang Funktionen]*
+  * Klientenverwaltung...
+  * Banking...
   * [Splitten Geldeingänge splitten]
   * [Schulden]
  * *[Sicherheit]*
   * [ClientAuthentication SSL Client Authentication]
+  * Email-Authentifizierung...
+  * OpenID-Authentifizierung...
  * *Datenbank*
   * [Benutzer]
   * [Girokonten]
-  * [Klienten]
+   * [Girokontenumsaetze Girokontenumsätze]
+   * [Zuteilungen]
+  * Klienten
    * [Stammdaten]
-   * [Umsaetze Umsätze]
+   * Umsätze
+    * [Einzahlungen]
+    * [Auszahlungen]
+    * [Ueberweisungsauftraege Überweisungsaufträge]
    * [Schulden]
+    * [Forderungen]
+    * [Tilgungen]
