@@ -10,14 +10,14 @@ einer bestimmten Forderung getilgt hat.
 Die Differenz, also die Höhe der noch offenen Forderungen
 wird auch in der Klientenliste angezeigt (neben dem Kontostand).
 
-== Forderungen ==
+== [Forderungen] ==
 
 Forderungen werden im Klientenprofil bei den Notizen aufgelistet
 und können dort verwaltet (hinzugefügt und gelöscht) werden.
 Eingegebene Forderungen haben lediglich informativen Charakter,
 werden mit dem Kontoumsatz des Klienten also nicht verrechnet.
 
-== Tilgungen ==
+== [Tilgungen] ==
 
 Hat ein Klient eine eine Forderung zum Teil getilgt, können sie dies
 an der Forderung im Kanzleiprofil vermerken.
