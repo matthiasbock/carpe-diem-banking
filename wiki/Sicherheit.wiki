@@ -11,3 +11,5 @@
   * Verwaltung: sehen alle Konten, haben aber nur Lese-Zugriff
  * verschlüsselte Datenübertragung mit SSL über HTTPS
  * Internet-Banking über HBCI
+
+http://carpe-diem-banking.googlecode.com/svn/doc/Sicherheit.png
