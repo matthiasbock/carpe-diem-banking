@@ -1,0 +1,13 @@
+#summary Sicherheit
+
+= Sicherheit =
+
+ * Login:
+  * nur authorisierte Personen: Benutzername, Passwort
+  * optional: [ClientAuthentication SSL Client Authentication], d.h. an einzelnen, befugten PCs werden Benutzer automatisch eingeloggt
+  * optional IP-Filter: Zugriff nur von befugten IP-Adressen möglich
+ * verschiedene Typen von Benutzern:
+  * Sozialarbeiter: sehen ihre eigenen Klienten ganz oben, aber auch die ihrer Kollegen
+  * Verwaltung: sehen alle Konten, haben aber nur Lese-Zugriff
+ * verschlüsselte Datenübertragung mit SSL über HTTPS
+ * Internet-Banking über HBCI
