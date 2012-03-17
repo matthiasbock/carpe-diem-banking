@@ -1,12 +1,16 @@
-#summary Funktionsumfang
+#summary Funktionen
 
-= Funktionsumfang =
+== Funktionen ==
 
- * Login nur für authorisierte Personen
- * verschlüsselte Datenübertragung
- * Verwaltung der Klienten in einer Kartei
- * Erstellung von internen Klienten-Bankkonten
- * Übersicht der jüngsten Geldein- & ausgänge sowie des aktuellen Kontostandes für jeden einzelnen Klienten
- * Eingabe von Bargeld-Einzahlungen eines Klienten an seinen Sozialarbeiter
- * Eingabe von Bargeld-Auszahlungen eines Sozialarbeiters an einen Klienten
- * Eingabe von Überweisungen im Auftrag eines Klienten von einem Konto des Vereins (über HBCI)
+ * Verwaltung der einzelnen Klienten mithilfe einer Datenbank (Papier -> computergestützt)
+ * Erstellung von internen (virtuellen) Klienten-"Konten"
+  * Übersicht aller Geldein/ausgänge für jeden einzelnen Klienten ("Kontoauszug")
+  * + _Ausdruckmöglichkeit_
+  * Ausgabe des jeweiligen aktuellen Kontostands
+  * + _Ausdruckmöglichkeit_
+  * Eingabe von Bargeld-Einzahlungen eines Klienten an seinen Sozialarbeiter
+  * + _Ausdrucken von Einzahlungsbelegen_
+  * Eingabe von Bargeld-Auszahlungen eines Sozialarbeiters an einen Klienten
+  * + _Ausdrucken von Auszahlungsbelegen_
+  * Eingabe von Überweisungen im Auftrag eines Klienten (von einem realen Bankkonto des Vereins)
+  * + _Ausdrucken von Überweisungsbelegen_
