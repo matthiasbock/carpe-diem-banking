@@ -2,7 +2,7 @@
 
 = HBCI =
 
-Die Klientenverwaltung enthält Skripte, die einen Abgleich mit Konten einer HBCI-fähigen Bank ermöglicht.
+Die Klientenverwaltung enthält u.a. Skripte, die einen automatischen Abgleich mit Girokonten bei einer HBCI-fähigen Bank ermöglicht.
 
 == Getestete HBCI-Banken ==
 === DKB, Deutsche Kreditbank ===
